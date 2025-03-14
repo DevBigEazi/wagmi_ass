@@ -1,7 +1,6 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { useAccount, useChainId, useSwitchChain } from 'wagmi';
 
-// This provider component will handle automatic network switching
 const AutoNetworkSwitcher = ({ defaultChainId, children }) => {
   const { isConnected } = useAccount();
   const chainId = useChainId();
@@ -18,7 +17,7 @@ const AutoNetworkSwitcher = ({ defaultChainId, children }) => {
         if (!chainId || !isCurrentChainSupported) {
           try {
             console.log(`Auto-switching to chain ID: ${defaultChainId}`);
-            await switchChain({ chainId: defaultChainId });
+          switchChain({ chainId: defaultChainId });
           } catch (error) {
             console.error('Failed to switch network:', error);
           }

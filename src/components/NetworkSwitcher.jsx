@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useChainId, useSwitchChain } from 'wagmi';
 import { ChevronDown } from 'lucide-react';
 

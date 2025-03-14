@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from 'react';
 import { useConnect } from 'wagmi';
 import { X } from 'lucide-react';
 

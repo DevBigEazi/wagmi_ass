@@ -10,8 +10,7 @@ const App = () => {
   const [isWalletModalOpen, setIsWalletModalOpen] = useState(false);
   const { isConnected } = useAccount();
 
-  // Set your preferred default network
-  const DEFAULT_CHAIN_ID = lisk.id; // or liskSepolia.id for testnet
+  const DEFAULT_CHAIN_ID = lisk.id;
 
   return (
     <AutoNetworkSwitcher defaultChainId={DEFAULT_CHAIN_ID}>
