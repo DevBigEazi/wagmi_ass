@@ -2,7 +2,7 @@ import { useConnect } from 'wagmi';
 import { X } from 'lucide-react';
 
 const WalletConnectModal = ({ isOpen, onClose }) => {
-  const { connectors, connect, isLoading, pendingConnector } = useConnect();
+  const { connectors, connect, isPending } = useConnect();
 
   if (!isOpen) return null;
 
@@ -26,7 +26,6 @@ const WalletConnectModal = ({ isOpen, onClose }) => {
           
           <div className="space-y-3">
             {connectors.map((connector) => {
-              const isPending = isLoading && pendingConnector?.id === connector.id;
               
               return (
                 <button

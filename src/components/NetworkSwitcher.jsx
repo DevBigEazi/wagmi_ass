@@ -5,7 +5,7 @@ import { ChevronDown } from 'lucide-react';
 const NetworkSwitcher = () => {
   const [isOpen, setIsOpen] = useState(false);
   const chainId = useChainId();
-  const { chains, error, isLoading, pendingChainId, switchChain } = useSwitchChain();
+  const { chains, isError, isPending, switchChain } = useSwitchChain();
 
   return (
     <div className="relative">
@@ -47,7 +47,7 @@ const NetworkSwitcher = () => {
               >
                 <div className="flex items-center justify-between">
                   <span>{x.name}</span>
-                  {isLoading && pendingChainId === x.id && <span>Switching...</span>}
+                  {isPending === x.id && <span>Switching...</span>}
                 </div>
               </button>
             ))}
@@ -55,7 +55,7 @@ const NetworkSwitcher = () => {
         </div>
       )}
 
-      {error && <div className="text-red-500 text-sm mt-2">{error.message}</div>}
+      {isError && <div className="text-red-500 text-sm mt-2">{isError.message}</div>}
     </div>
   );
 };
