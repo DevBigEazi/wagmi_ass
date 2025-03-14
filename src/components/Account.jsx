@@ -31,7 +31,7 @@ export function Account() {
   };
 
   return (
-    <div className="rounded-2xl border bg-white p-6 shadow-sm">
+    <div className="rounded-2xl border bg-orange-100 p-6 shadow-sm">
       <div className="flex flex-col space-y-5">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-3">

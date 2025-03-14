@@ -14,12 +14,12 @@ const App = () => {
 
   return (
     <AutoNetworkSwitcher defaultChainId={DEFAULT_CHAIN_ID}>
-      <div className="container mx-auto p-4">
+      <div className="p-4 h-[100vh] bg-orange-100">
         <div className="flex justify-between items-center mb-8">
           <h1 className="text-2xl font-bold">Lisk Wallet Demo</h1>
           
           {isConnected ? (
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center space-x-4 ">
               <NetworkSwitcher />
             </div>
           ) : (

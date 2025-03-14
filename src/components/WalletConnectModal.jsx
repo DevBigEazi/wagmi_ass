@@ -7,9 +7,9 @@ const WalletConnectModal = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-      <div className="bg-white rounded-lg shadow-xl w-96 max-w-full overflow-hidden">
-        <div className="flex items-center justify-between p-4 border-b">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-orange-200 bg-opacity-50">
+      <div className="bg-orange-300 rounded-lg shadow-xl w-96 max-w-full overflow-hidden">
+        <div className="flex items-center justify-between p-4">
           <h2 className="text-xl font-semibold">Connect Wallet</h2>
           <button
             onClick={onClose}
