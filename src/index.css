@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@import "tailwindcss";
+
+:root {
+    --primary: #2567F9;
+    --primary-dark: #1452E0;
+    --secondary: #6C86AD;
+    --background: #F5F7FA;
+    --surface: #FFFFFF;
+    --error: #ED4F32;
+    --success: #33C25E;
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+        sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: var(--background);
+    color: #1F2937;
+}
+
+.wallet-card {
+    transition: all 0.3s ease-in-out;
+}
+
+.wallet-card:hover {
+    transform: translateY(-2px);
+}
+
+.network-indicator {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.network-indicator.connected {
+    background-color: var(--success);
+}
+
+.network-indicator.disconnected {
+    background-color: var(--secondary);
+}
+
+.address-badge {
+    background-color: rgba(37, 103, 249, 0.1);
+    color: var(--primary);
+    border-radius: 16px;
+    padding: 4px 12px;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.modal-content {
+    background-color: var(--surface);
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    max-width: 420px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.fade-in {
+    animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
