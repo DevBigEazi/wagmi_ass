@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useAccount, useDisconnect, useEnsAvatar, useEnsName, useBalance } from 'wagmi';
-import { Copy, ExternalLink, LogOut } from 'lucide-react';
-import NetworkSwitcher from './NetworkSwitcher';
+import { Copy, LogOut } from 'lucide-react';
+import { formatEther } from 'viem';
 
 export function Account() {
   const { address, connector } = useAccount();
@@ -21,10 +21,6 @@ export function Account() {
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     }
-  };
-
-  const openBlockExplorer = () => {
-    window.open(`https://explorer.lisk.com/address/${address}`, '_blank');
   };
 
   return (
@@ -71,13 +67,6 @@ export function Account() {
                 <Copy size={16} />
                 {copied && <span className="absolute ml-1 text-xs">Copied!</span>}
               </button>
-              <button
-                onClick={openBlockExplorer}
-                className="rounded p-1 hover:bg-gray-200"
-                title="View on explorer"
-              >
-                <ExternalLink size={16} />
-              </button>
             </div>
           </div>
 
@@ -85,7 +74,7 @@ export function Account() {
             <div className="rounded-lg bg-gray-50 p-3">
               <div className="text-sm text-gray-500">Balance</div>
               <div className="font-medium">
-                {balanceData.formatted} {balanceData.symbol}
+                {formatEther(balanceData.value)} {balanceData.symbol}
               </div>
             </div>
           )}
