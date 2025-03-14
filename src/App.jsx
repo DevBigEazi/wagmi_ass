@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { useAccount } from 'wagmi';
 import { lisk } from 'wagmi/chains';
 import NetworkSwitcher from './components/NetworkSwitcher';
-import AccountDropdown from './components/AccountDropdown';
 import WalletConnectModal from './components/WalletConnectModal';
 import AutoNetworkSwitcher from './components/AutoNetworkSwitcher';
 import Account from './components/Account';
@@ -23,7 +22,6 @@ const App = () => {
           {isConnected ? (
             <div className="flex items-center space-x-4">
               <NetworkSwitcher />
-              <AccountDropdown />
             </div>
           ) : (
             <button

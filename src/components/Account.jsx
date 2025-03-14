@@ -90,10 +90,6 @@ export function Account() {
             </div>
           )}
         </div>
-
-        <div className="pt-2">
-          <NetworkSwitcher />
-        </div>
       </div>
     </div>
   );

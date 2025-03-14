@@ -4,9 +4,6 @@ import { X } from 'lucide-react';
 
 const WalletConnectModal = ({ isOpen, onClose }) => {
   const { connectors, connect, isLoading, pendingConnector } = useConnect();
-  // No need to track readiness state
-
-  // Don't track connector readiness - allow all connectors to be clickable immediately
 
   if (!isOpen) return null;
 
